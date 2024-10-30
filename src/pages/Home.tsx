@@ -24,7 +24,8 @@ export default function Home() {
   }
 
   function remover(index: number) {
-    alert("Removendo item de índice " + index);
+    console.log("Removendo item de índice " + index);
+    setItens(itens.filter((_, i) => i !== index));
   }
 
   return (
