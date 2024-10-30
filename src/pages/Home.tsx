@@ -12,8 +12,15 @@ export default function Home() {
     e.preventDefault();
     console.log("Submetendo formulário:", e);
     const f = e.target as HTMLElement;
-    const input = f.querySelector("input")?.value;
-    console.log("Valor do input:", input);
+    const input = f.querySelector("input") as HTMLInputElement;
+    const inputValue = input?.value;
+    console.log("Valor do input:", inputValue);
+    if (inputValue) {
+      setItens([...itens, inputValue]);
+    }
+    if (input) {
+      input.value = "";
+    }
   }
 
   return (
@@ -28,10 +35,13 @@ export default function Home() {
           <Button type="submit">Adicionar</Button>
         </div>
       </form>
-      <TodoItem name="Comprar pão" />
+      {itens.map((item, index) => (
+        <TodoItem key={index} name={item} />
+      ))}
+      {/* <TodoItem name="Comprar pão" />
       <TodoItem name="Fazer trabalho de Algoritmos" />
       <TodoItem name="Paradalal alguma" />
-      <TodoItem name="sLK FI alguma" />
+      <TodoItem name="sLK FI alguma" /> */}
 
       <Separator />
       <div>
