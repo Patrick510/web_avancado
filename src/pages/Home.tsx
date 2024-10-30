@@ -38,11 +38,6 @@ export default function Home() {
       {itens.map((item, index) => (
         <TodoItem key={index} name={item} />
       ))}
-      {/* <TodoItem name="Comprar pão" />
-      <TodoItem name="Fazer trabalho de Algoritmos" />
-      <TodoItem name="Paradalal alguma" />
-      <TodoItem name="sLK FI alguma" /> */}
-
       <Separator />
       <div>
         <Rodape />
