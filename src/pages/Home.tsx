@@ -23,6 +23,10 @@ export default function Home() {
     }
   }
 
+  function remover(index: number) {
+    alert("Removendo item de índice " + index);
+  }
+
   return (
     <div className="p-5 grid gap-3">
       <div>
@@ -36,7 +40,7 @@ export default function Home() {
         </div>
       </form>
       {itens.map((item, index) => (
-        <TodoItem key={index} name={item} />
+        <TodoItem key={index} name={item} remover={() => remover(index)} />
       ))}
       <Separator />
       <div>
