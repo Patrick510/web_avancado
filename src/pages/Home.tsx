@@ -12,7 +12,8 @@ export default function Home() {
     e.preventDefault();
     console.log("Submetendo formulário:", e);
     const f = e.target as HTMLElement;
-    const input = f.querySelector("input") as HTMLInputElement;
+    const input = f.querySelector("input")?.value;
+    console.log("Valor do input:", input);
   }
 
   return (
